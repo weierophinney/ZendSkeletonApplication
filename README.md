@@ -21,15 +21,19 @@ and use composer to install dependencies:
     cd ZendSkeletonApplication
     php composer.phar install
 
-Using Git submodules
+Without Composer
 --------------------
-Alternatively, you can install using native git submodules. This method works fine but it is
-recommended that you use Composer due to the dependency management it provides.
+Although it is recommended that you use Composer due to the dependency management it provides, 
+you may still clone in ZF2 by hand:
 
     git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
+    cd ZendSkeletonApplication
+    echo ./ZendFramework > vendor/.gitignore
+    git clone git://github.com/zendframework/zf2.git vendor/ZendFramework
+
 
 You will also need to update public/index.php and modules/Application/Module.php to enable autoloading.
-For public/index.php, replace lines 2-13 with:
+For public/index.php, replace lines 2-10 with:
 
     use Zend\Loader\AutoloaderFactory,
         Zend\ServiceManager\ServiceManager,
