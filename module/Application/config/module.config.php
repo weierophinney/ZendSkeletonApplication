@@ -7,7 +7,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\IndexController',
+                        'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -22,7 +22,7 @@ return array(
                     'route'    => '/application',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'IndexController',
+                        'controller'    => 'Index',
                         'action'        => 'index',
                     ),
                 ),
@@ -44,9 +44,9 @@ return array(
             ),
         ),
     ),
-    'controller' => array(
-        'classes' => array(
-            'Application\Controller\IndexController' => 'Application\Controller\IndexController'
+    'controllers' => array(
+        'invokables' => array(
+            'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
     ),
     'view_manager' => array(
